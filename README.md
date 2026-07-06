@@ -50,6 +50,35 @@ SSH_BRUTEFORCE_DETECTION/
 
 ---
 
+## 🧠 Workflow Architecture
+
+A clear pipeline connects raw SSH logs to deployable detection models:
+
+```text
+Raw SSH logs  -->  Preprocessing & feature extraction  -->  Temporal split
+      |                     |                                 |
+      |                     v                                 v
+      |              Aggregated windows                 Train / Val / Test
+      |                     |                                 |
+      v                     v                                 v
+  Dataset A             Feature matrix                 Model training
+      |                                                  /   |    \
+      |                                                 v    v     v
+      |                                          XGBoost   LSTM   GRU
+      |                                                 \   |    /
+      v                                                  v  v   v
+  Dataset B (unseen)  -->  Cross-domain evaluation  -->  Generalization report
+```
+
+Key workflow steps:
+- Raw SSH logs are parsed into 1-minute behavioral windows
+- Features are aggregated, normalized, and split temporally
+- Models are trained on Dataset A and evaluated on held-out tests
+- Dataset B is reserved for external generalization testing
+- Balancing and ablation studies verify robustness and feature impact
+
+---
+
 ## ⚙️ Behavioral Feature Schema
 
 6 behavioral features extracted from 1-minute SSH log windows:
