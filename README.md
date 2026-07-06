@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 Project Objective
+##  Project Objective
 
 SSH brute force attack detection models trained on single datasets suffer from overfitting and poor real-world performance. This project aims to:
 
@@ -19,7 +19,7 @@ SSH brute force attack detection models trained on single datasets suffer from o
 
 ---
 
-## 📂 Project Directory Structure
+##  Project Directory Structure
 
 ```
 SSH_BRUTEFORCE_DETECTION/
@@ -50,7 +50,7 @@ SSH_BRUTEFORCE_DETECTION/
 
 ---
 
-## ⚙️ Behavioral Feature Schema
+##  Behavioral Feature Schema
 
 6 behavioral features extracted from 1-minute SSH log windows:
 
@@ -67,7 +67,7 @@ SSH_BRUTEFORCE_DETECTION/
 
 ---
 
-## 🛡️ Data Integrity & Balancing
+##  Data Integrity & Balancing
 
 - **Temporal Splits**: 70% training, 10% validation, 20% testing (chronological order, no shuffling)
 - **Leakage Prevention**: SMOTE fit only on training set, applied to validation/test
@@ -76,7 +76,7 @@ SSH_BRUTEFORCE_DETECTION/
 
 ---
 
-## 📊 Experimental Results
+##  Experimental Results
 
 ### Dataset A (In-Domain) — 7,139 test samples
 
@@ -106,9 +106,9 @@ SSH_BRUTEFORCE_DETECTION/
 
 ---
 
-## 🏗️ Model Architectures
+##  Model Architectures
 
-### XGBoost ⭐ (Best Model)
+### XGBoost  (Best Model)
 ```python
 XGBClassifier(n_estimators=100, learning_rate=0.1, max_depth=6)
 - Fastest training (0.41 sec)
@@ -135,7 +135,7 @@ Input → GRU(128) → Dropout(0.3) → GRU(64) → Dropout(0.3) → Dense(1) �
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Automated Pipeline
 ```bash
@@ -156,7 +156,7 @@ python evaluate_balancing_impact.py     # 8. Feature ablation
 
 ---
 
-## 📋 Installation
+##  Installation
 
 ### Prerequisites
 Python 3.8+ (Windows/Linux/macOS)
@@ -168,7 +168,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📚 Datasets
+##  Datasets
 
 | Property | Dataset A (Loghub) | Dataset B (SecRepo) |
 |----------|:---:|:---:|
@@ -179,7 +179,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📊 Reports
+##  Reports
 
 - **[model_evaluation_report.md](model_evaluation_report.md)** — Detailed metrics & performance
 - **[class_distribution_report.md](class_distribution_report.md)** — Class balance analysis
@@ -187,7 +187,7 @@ pip install -r requirements.txt
 
 ---
 
-## 💡 Key Recommendations
+##  Key Recommendations
 
 1. **Production Use**: Deploy **XGBoost** with SMOTE balancing
    - ~98.7% accuracy on known environments
@@ -204,7 +204,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📝 Project Metadata
+##  Project Metadata
 
 | Aspect | Value |
 |--------|-------|
@@ -217,7 +217,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🤝 Potential Extensions
+##  Potential Extensions
 
 - Real-time detection adapter (live SSH monitoring)
 - Multi-class attack classification
@@ -227,11 +227,10 @@ pip install -r requirements.txt
 
 ---
 
-## 📄 Attribution
+##  Attribution
 
 **Datasets**: [Loghub](https://github.com/logpai/loghub), [SecRepo.com](https://www.secrepo.com)
 
 ---
 
-**Status**: ✅ Complete — XGBoost, LSTM, GRU models trained & evaluated  
-**Updated**: July 7, 2026
+
