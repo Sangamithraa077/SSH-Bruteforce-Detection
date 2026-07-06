@@ -50,7 +50,7 @@ SSH_BRUTEFORCE_DETECTION/
 
 ---
 
-## 🧠 Workflow Architecture
+##  Workflow Architecture
 
 A clear pipeline connects raw SSH logs to deployable detection models:
 
