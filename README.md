@@ -3,11 +3,11 @@
 > 🎓 **Academic Project**  
 > Cybersecurity detection using ensemble machine learning with cross-domain generalization.
 
-[![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue)](https://www.python.org/) [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.3%2B-orange)](https://scikit-learn.org/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red)](https://pytorch.org/) [![XGBoost](https://img.shields.io/badge/XGBoost-2.0%2B-red)](https://xgboost.readthedocs.io/)
+[![Status](https://img.shields.io/badge/status-production--ready-brightgreen)](https://github.com/Sangamithraa077/SSH-Bruteforce-Detection) [![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue)](https://www.python.org/) [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.3%2B-orange)](https://scikit-learn.org/) [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red)](https://pytorch.org/) [![XGBoost](https://img.shields.io/badge/XGBoost-2.0%2B-red)](https://xgboost.readthedocs.io/)
 
 ---
 
-##  Project Objective
+## Project Objective
 
 SSH brute force attack detection models trained on single datasets suffer from overfitting and poor real-world performance. This project aims to:
 
@@ -19,7 +19,7 @@ SSH brute force attack detection models trained on single datasets suffer from o
 
 ---
 
-##  Project Directory Structure
+## Project Directory Structure
 
 ```
 SSH_BRUTEFORCE_DETECTION/
@@ -96,7 +96,7 @@ Key workflow steps:
 
 ---
 
-##  Data Integrity & Balancing
+## Data Integrity & Balancing
 
 - **Temporal Splits**: 70% training, 10% validation, 20% testing (chronological order, no shuffling)
 - **Leakage Prevention**: SMOTE fit only on training set, applied to validation/test
@@ -105,7 +105,7 @@ Key workflow steps:
 
 ---
 
-##  Experimental Results
+## Experimental Results
 
 ### Dataset A (In-Domain) — 7,139 test samples
 
@@ -135,7 +135,7 @@ Key workflow steps:
 
 ---
 
-##  Model Architectures
+## Model Architectures
 
 ### XGBoost  (Best Model)
 ```python
@@ -164,7 +164,7 @@ Input → GRU(128) → Dropout(0.3) → GRU(64) → Dropout(0.3) → Dense(1) �
 
 ---
 
-##  Quick Start
+## Quick Start
 
 ### Automated Pipeline
 ```bash
@@ -185,7 +185,23 @@ python evaluate_balancing_impact.py     # 8. Feature ablation
 
 ---
 
-##  Installation
+## Reproduce Results
+
+```bash
+python run_pipeline.py
+```
+
+Expected outputs:
+- `models/xgboost_model.joblib`
+- `models/lstm_model.pt`, `models/gru_model.pt`
+- `data/processed/model_evaluation_results.csv`
+- `model_evaluation_report.md`, `class_distribution_report.md`
+
+> Place the raw SSH logs in `data/SSH.log` and `data/auth_secrepo.log` before running the pipeline.
+
+---
+
+## Installation
 
 ### Prerequisites
 Python 3.8+ (Windows/Linux/macOS)
@@ -197,7 +213,7 @@ pip install -r requirements.txt
 
 ---
 
-##  Datasets
+## Datasets
 
 | Property | Dataset A (Loghub) | Dataset B (SecRepo) |
 |----------|:---:|:---:|
@@ -208,7 +224,7 @@ pip install -r requirements.txt
 
 ---
 
-##  Reports
+## Reports
 
 - **[model_evaluation_report.md](model_evaluation_report.md)** — Detailed metrics & performance
 - **[class_distribution_report.md](class_distribution_report.md)** — Class balance analysis
@@ -216,7 +232,7 @@ pip install -r requirements.txt
 
 ---
 
-##  Key Recommendations
+## Key Recommendations
 
 1. **Production Use**: Deploy **XGBoost** with SMOTE balancing
    - ~98.7% accuracy on known environments
