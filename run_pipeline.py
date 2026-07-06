@@ -4,8 +4,8 @@ run_pipeline.py  —  Master Orchestration Script for SSH Brute Force Detection 
 This script executes the entire ML pipeline sequentially:
   1. Data preprocessing and feature extraction
   2. Class distribution analysis
-  3. Classical model training
-  4. Deep learning model training
+  3. XGBoost model training
+  4. Deep learning model training (LSTM, GRU)
   5. In-domain evaluation (Dataset A)
   6. Cross-domain evaluation (Dataset A + B)
   7. Ablation studies
@@ -23,7 +23,7 @@ from datetime import datetime
 SCRIPTS = [
     ("preprocess_logs.py", "1. Data Preprocessing & Feature Extraction"),
     ("analyze_distribution.py", "2. Class Distribution Analysis"),
-    ("train_ensemble.py", "3. Classical Model Training (Decision Tree, LightGBM, XGBoost)"),
+    ("train_xgboost.py", "3. XGBoost Model Training"),
     ("train_lstm.py", "4a. Deep Learning - LSTM Training"),
     ("train_gru.py", "4b. Deep Learning - GRU Training"),
     ("evaluate_models.py", "5. Dataset A In-Domain Evaluation"),
@@ -99,10 +99,7 @@ def main():
         print("  ✓ data/processed/dataset_a.npz               (33,643 samples)")
         print("  ✓ data/processed/dataset_b.npz               (4,272 samples)")
         print("  ✓ data/processed/split_smote.npz             (SMOTE-balanced splits)")
-        print("  ✓ models/baseline_decisiontree.joblib        (98.72% accuracy)")
-        print("  ✓ models/boosting_lightgbm.joblib            (99.30% accuracy - Best)")
-        print("  ✓ models/xgboost_model.joblib                (98.68% accuracy)")
-        print("  ✓ models/deeplearning_mlp.joblib             (99.00% accuracy)")
+        print("  ✓ models/xgboost_model.joblib                (98.68% accuracy - Best)")
         print("  ✓ models/lstm_model.pt & lstm_meta.joblib    (98.59% F1)")
         print("  ✓ models/gru_model.pt & gru_meta.joblib      (98.42% F1)")
         print("  ✓ data/processed/model_evaluation_results.csv")

@@ -5,9 +5,8 @@
 numpy>=1.21.0
 pandas>=1.3.0
 
-# Machine Learning - Classical Models
+# Machine Learning - Gradient Boosting
 scikit-learn>=1.0.0
-lightgbm>=4.0.0
 xgboost>=2.0.0
 joblib>=1.1.0
 
