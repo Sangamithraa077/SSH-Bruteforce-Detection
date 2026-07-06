@@ -1,0 +1,13 @@
+feature_name
+attempt_count
+failed_count
+success_count
+invalid_user_count
+unique_usernames
+unique_ports
+duration_seconds
+attempt_rate
+failure_rate
+invalid_user_rate
+success_rate
+port_diversity

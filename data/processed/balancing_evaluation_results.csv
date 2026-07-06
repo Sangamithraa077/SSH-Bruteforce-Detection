@@ -1,0 +1,6 @@
+Config,Test_Acc,Test_Prec,Test_Rec,Test_F1,Test_AUC,Test_PR_AUC,B_Acc,B_Prec,B_Rec,B_F1,B_AUC,B_PR_AUC
+Raw (No Balancing),1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Random Undersampling (RUS),1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Random Oversampling (ROS),1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+SMOTE,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+ADASYN,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
